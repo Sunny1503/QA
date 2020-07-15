@@ -1,0 +1,7 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"loadSahi","TreatingHCP.sah"
+
+"My First Testcase","[Documentation]","My testcase description. Modify as needed"
+,"c Login","https___crmirdapp_triplefin_com_irdrx365crm_main_aspx_240849239:https://crmirdapp.triplefin.com/IRDRX365CRM/main.aspx#240849239","authuser:TRIFIN\\Varadi.Raju","authpassword:Fz5ZVlQYW14SZ04=","authkey:/.*/"
+,"c Search Patient","Patient Name:RIZ TEST"
+,"c Select HCP","x1234569870:1234569870"

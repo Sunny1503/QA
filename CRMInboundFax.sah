@@ -1,0 +1,59 @@
+/*Login into CRM*/
+function LoginCRM($https___crmirdapp_triplefin_com_irdrx365crm, $authuser, $authpassword, $authkey)
+{
+	_navigateTo($https___crmirdapp_triplefin_com_irdrx365crm);
+	_click(_row("Username"));
+	_setValue(_textbox("authUser"), $authuser);
+	_setPassword(_password("authPassword"), $authpassword);
+	_click(_cell(6));
+	_setValue(_textbox("authKey"), $authkey);
+	_click(_submit("Authenticate"));
+}
+/*Open the Inbound Fax Viewer*/
+function OpenFaxViewer( $infaxdev_triplefin_com){
+	_click(_span("navTabButtonArrowDown"));
+	_click(_span("Inbound Fax"));
+	_selectDomain($infaxdev_triplefin_com);
+}
+/*Enter details to search the fax*/
+function SearchFax($ctl00$contentplaceholder1$ddlprogram,  $ctl00$contentplaceholder1$phone1)
+{
+	//_assertExists(_select("ctl00$ContentPlaceHolder1$ddlProgram"));
+//_assertVisible(_select("ctl00$ContentPlaceHolder1$ddlProgram"));
+	//_domain("infaxint.triplefin.com")._click(_select("ctl00$ContentPlaceHolder1$ddlProgram"));
+	_setSelected(_select("ctl00$ContentPlaceHolder1$ddlProgram"),"Ozurdex-EyeCue");
+//_assertEqual("Ozurdex-EyeCue", _getSelectedText(_select("ctl00$ContentPlaceHolder1$ddlProgram")));
+	//_click(_image("ContentPlaceHolder1_recFrom_img_datepicker"));
+	//_click(_submit("<"));
+	//_click(_submit("<[1]"));$x10, $x20,
+	//_click(_cell($x10));
+	//_assertEqual("10", _getText(_cell("10")));
+	_setValue(_textbox("ctl00$ContentPlaceHolder1$recFrom$tb_datepicker"), "06/10/2019");
+	_assertEqual("06/10/2019", _getValue(_textbox("ctl00$ContentPlaceHolder1$recFrom$tb_datepicker")));
+	//_click(_image("ContentPlaceHolder1_recTo_img_datepicker"));
+	//_click(_submit("<[1]"));
+	//_click(_cell($x20));
+   //_assertEqual("20", _getText(_cell("20")));
+	_setValue(_textbox("ctl00$ContentPlaceHolder1$recTo$tb_datepicker"), "07/20/2019");
+	_assertEqual("07/20/2019", _getValue(_textbox("ctl00$ContentPlaceHolder1$recTo$tb_datepicker")));
+	_setValue(_textbox("ctl00$ContentPlaceHolder1$phone1"), "123");
+	_assertEqual("123", _getValue(_textbox("ctl00$ContentPlaceHolder1$phone1")));
+	_click(_submit("Search"));
+}
+/*close the Opened fax*/
+function CloseFax()
+{
+	_click(_submit("ContentPlaceHolder1_btnModalSearchCancel"));
+}
+/*Close the Browser*/
+function CloseBrowser()
+{
+	_closeBrowser();
+}
+
+
+
+
+
+
+

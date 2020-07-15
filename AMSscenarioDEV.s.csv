@@ -1,0 +1,19 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"loadSahi","fOutboundCorrespodance.sah"
+,"loadSahi","fServiceEvent.sah"
+
+,"loadSahi","fPatientPage.sah"
+,"loadSahi","fSearchPatient.sah"
+,"loadSahi","floginCRM.sah"
+
+
+
+
+
+
+"My SecondTestcase","[Documentation]","AMS SCENARIO DEV ENV"
+"scenarioFunctions.sah","f Login CRM","URL:https://crmirdapp.triplefin.com/IRDRX365CRM","Username:TRIFIN\\satyasandeep.pulleti","Password:EjwIBxZFSi4RF04=","Authkey:/.*/"
+,"f Search Patient","Patient Name:Riz Test","Patient Initial Name:Riz"
+,"f Patient Page","Patient Name:Riz Test"
+,"f Outbound Correspondance","Outbound Correspondence Type:Fax"
+,"f Service Event","Service Type:Benefit Verification","Status:Assigned"

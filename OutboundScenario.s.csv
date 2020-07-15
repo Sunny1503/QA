@@ -1,0 +1,8 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"loadSahi","HCP/TreatingHCPFunctions.sah"
+,"loadSahi","Out/OutboundFunctions.sah"
+
+"OutboundCorrespondence","[Documentation]","Test Outbound Correspondence Functionality"
+,"d Login","https___crmirdapp_triplefin_com_irdrx365crm_main_aspx_240849239:https://crmirdapp.triplefin.com/IRDRX365CRM/main.aspx#240849239","authuser:TRIFIN\\Varadi.Raju","authpassword:Fz5ZVlQYW14SZ04=","authkey:/.*/"
+,"d Find Patient","crmgrid_findcriteria:Riz Test"
+,"d Outbound Correspondence","outbound_correspondence:Outbound Correspondence","outboundtypeoption:Fax","finish:Finish"

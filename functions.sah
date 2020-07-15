@@ -1,0 +1,12 @@
+_include("Search Patient Function.sah");
+_include("Outbound correspondance Function.sah");
+_include("Service Event Function.sah");
+
+/* --Functions Above-- */
+dLogin("https://crmirdapp.triplefin.com/IRDRX365CRM/main.aspx#240849239", "TRIFIN\\satyasandeep.pulleti", "EjxZVlUYW14SZ04=", "/.*/");
+dFindpatient("RIZ TEST");
+dOutboundcorrespondence("Outbound Correspondence", "Fax");
+dBenefitverification("/Create Service Event/", "Benefit Verification", "#");
+dCreateserviceevent();
+dSaveandclose("null");
+

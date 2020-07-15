@@ -1,0 +1,48 @@
+/**
+* LoginJJstage($https___jjstageapp_triplefin_com_jjstagerx365crm, $authuser, $authpassword, $authkey)
+* @param $https___jjstageapp_triplefin_com_jjstagerx365crm - 
+* @param  $authuser - 
+* @param  $authpassword - 
+* @param  $authkey - 
+*/
+function LoginJJstage($https___jjstageapp_triplefin_com_jjstagerx365crm, $authuser, $authpassword, $authkey){
+	_navigateTo($https___jjstageapp_triplefin_com_jjstagerx365crm);
+	_setValue(_textbox("authUser"), $authuser);
+	_setPassword(_password("authPassword"), $authpassword);
+	_setValue(_textbox("authKey"), $authkey);
+	_click(_submit("Authenticate"));
+}
+
+/**
+* OpenInboundFax($infaxstage_triplefin_com)
+* @param $infaxstage_triplefin_com - 
+*/
+function OpenInboundFax($infaxstage_triplefin_com){
+	_click(_span("navTabButtonArrowDown"));
+	_click(_span("Inbound Fax"));
+	_selectDomain($infaxstage_triplefin_com);
+}
+
+/**
+* SearchFax($ctl00$contentplaceholder1$ddlprogram, $ctl00$contentplaceholder1$recfrom$tb_datepicker, $ctl00$contentplaceholder1$recto$tb_datepicker, $ctl00$contentplaceholder1$phone1)
+* @param $ctl00$contentplaceholder1$ddlprogram - 
+* @param  $ctl00$contentplaceholder1$recfrom$tb_datepicker - 
+* @param  $ctl00$contentplaceholder1$recto$tb_datepicker - 
+* @param  $ctl00$contentplaceholder1$phone1 - 
+*/
+function SearchFax($ctl00$contentplaceholder1$ddlprogram, $ctl00$contentplaceholder1$recfrom$tb_datepicker, $ctl00$contentplaceholder1$recto$tb_datepicker, $ctl00$contentplaceholder1$phone1){
+	_setSelected(_select("ctl00$ContentPlaceHolder1$ddlProgram"), $ctl00$contentplaceholder1$ddlprogram);
+	_setValue(_textbox("ctl00$ContentPlaceHolder1$recFrom$tb_datepicker"), "04/20/2019");
+	_setValue(_textbox("ctl00$ContentPlaceHolder1$recTo$tb_datepicker"), "07/10/2019");
+	_setValue(_textbox("ctl00$ContentPlaceHolder1$phone1"), $ctl00$contentplaceholder1$phone1);
+	_click(_submit("Search"));
+}
+
+/**
+* CloseFax()
+*/
+function CloseFax(){
+	_click(_submit("Close"));
+}
+
+

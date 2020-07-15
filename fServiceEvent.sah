@@ -1,0 +1,57 @@
+/**
+* fServiceEvent($ServiceType, $Status)
+* @param $ServiceType - 
+* @param  $Status - 
+*/
+function fServiceEvent($ServiceType, $Status){
+	_windowExists("/Patient Product Enrollment:/");
+	_selectWindow("/Patient Product Enrollment:/");
+	_assertVisible(_span("Patient Product Enrollment : Information"));
+	_click(_image("MORE COMMANDS"));
+	_click(_span("Start Dialog"));
+	//	if(_isVisible(_div("Look Up Record")))
+	//		{ 
+	//			_click(_div("Look Up Record"));
+	_click(_button("Add"));
+	//}
+
+	_windowExists("/Create Service Event/");
+	_selectWindow("/Create Service Event/");
+	_setSelected(_select("ms-crm-SelectBox "), $ServiceType);
+	_click(_button("Next"));
+	_click(_button("Next"));
+	_assertVisible(_label("/A Service Event has been created for you./"))
+		_click(_link("Click Here to open the Service Event."));
+
+	_windowExists("/Service Event:/");
+	_selectWindow("/Service Event:/");
+	_assertEqual("Service Event Status PendingPending", _getText(_div("Service Event Status PendingPending")));
+	//_click(_div("Next Status ----"));
+	_setValue(_textbox("new_newsubstatus_ledit"), $Status);
+	_click(_span("Save"));
+	//_assertEqual("Service Event Sub Status AssignedAssigned", _getText(_div("Service Event Sub Status AssignedAssigned")));
+	_click(_span("Save & Close"));
+
+	_windowExists("/Create Service Event/");
+	_selectWindow("/Create Service Event/");
+	_click(_button("Next"));
+	_click(_button("Finish"));
+
+	//Focus window /Patient Product Enrollment/
+	_windowExists("/Patient Product Enrollment:/");
+	_selectWindow("/Patient Product Enrollment:/");
+	_click(_span("Save & Close"));
+
+	//Focus Window /Patient Page/
+	
+	_selectWindow("/Patient:/");
+	_click(_span("Save & Close"));
+//	 _closeWindow();
+	_selectWindow();
+	//_windowExists("/Active/");
+	//_selectWindow("/Active/")._closeWindow();
+
+
+	//_closeBrowser();
+
+}

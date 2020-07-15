@@ -1,0 +1,9 @@
+_include("JJfns.sah");
+
+LoginJJstage("https://jjstageapp.triplefin.com/JJStageRx365CRM", "TRIFIN\\Sukeshana.Dagade", "EihZVlQZW14SZy8=", "/.*/");
+
+OpenInboundFax("infaxstage.triplefin.com");
+
+SearchFax("JJPAF", "04/20/2019", "07/10/2019", "123");
+
+CloseFax();

@@ -1,0 +1,8 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"loadSahi","JJfns.sah"
+
+"JJstage Inbound Fax","[Documentation]","Test Inbound Fax Viewer functionallity"
+,"LoginJJstage","https___jjstageapp_triplefin_com_jjstagerx365crm:https://jjstageapp.triplefin.com/JJStageRx365CRM","authuser:TRIFIN\\Sukeshana.Dagade","authpassword:EihZVlQZW14SZy8=","authkey:/.*/"
+,"OpenInboundFax","infaxstage_triplefin_com:infaxstage.triplefin.com"
+,"SearchFax","ctl00$contentplaceholder1$ddlprogram:JJPAF","ctl00$contentplaceholder1$recfrom$tb_datepicker:04/20/2019","ctl00$contentplaceholder1$recto$tb_datepicker:07/10/2019","ctl00$contentplaceholder1$phone1:123"
+,"CloseFax"

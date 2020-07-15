@@ -1,0 +1,96 @@
+/**
+* dLogin($https___crmirdapp_triplefin_com_intrx365crm, $authuser, $authpassword, $authkey)
+* @param $https___crmirdapp_triplefin_com_intrx365crm - 
+* @param  $authuser - 
+* @param  $authpassword - 
+* @param  $authkey - 
+*/
+//function dLogin($https___crmirdapp_triplefin_com_intrx365crm, $authuser, $authpassword, $authkey){
+//	_navigateTo($https___crmirdapp_triplefin_com_intrx365crm);
+//	_click(_row("Username"));
+//	_setValue(_textbox("authUser"), $authuser);
+//	_setPassword(_password("authPassword"), $authpassword);
+//	_setValue(_textbox("authKey"), $authkey);
+//	_click(_submit("Authenticate"));
+//	_click(_image("Close[1]"));
+//	_assertEqual("", _getText(_image("Microsoft Dynamics 365")));
+//	_click(_span("TabCS"));
+//}
+
+/**
+* dFindpatient($crmgrid_findcriteria_1)
+* @param $crmgrid_findcriteria_1 - 
+*/
+//function dFindpatient($crmgrid_findcriteria_1){
+//	_click(_link("Programs"));
+//	_click(_span("navTabButtonArrowDown"));
+//	_click(_span("Patients"));
+//	_setValue(_textbox("crmGrid_findCriteria[1]"), $crmgrid_findcriteria_1);
+//	_click(_image("Start search[1]"));
+//	_assertEqual("Riz Test", _getText(_link("Riz Test")));
+//	_click(_cell("Riz Test"));
+//	_click(_cell("Riz Test"));
+//	_doubleClick(_cell("Riz Test"));
+//	_click(_cell("Complete"));
+//	_doubleClick(_cell("Riz Test"));
+//}
+//
+
+/**
+* dBenefitverification($_create_service_event, $ms_crm_selectbox, $)
+* @param $_create_service_event - 
+* @param  $ms_crm_selectbox - 
+* @param  $ - 
+*/
+function dBenefitverification($_create_service_event, $ms_crm_selectbox, $){
+	//_click(_image("MORE COMMANDS"));
+	
+	_click(_image("MORE COMMANDS"));
+_click(_span("Start Dialog"));
+if(_isVisible(_div("Look Up Record")))
+{ 
+	_click(_button("Add"));
+}
+	//_click(_link("Start Dialog Start a dialog for this Patient Product Enrollment."));
+	//_click(_button("Add"));
+	_selectWindow($_create_service_event);
+	_setSelected(_select("ms-crm-SelectBox "), $ms_crm_selectbox);
+	_click(_button("Next"));
+	_click(_button("Next"));
+	_click(_cell("A Service Event has been created for you. Click Here to open the Service Event."));
+_click(_link("Click Here to open the Service Event."));
+
+}
+
+/**
+* dCreateserviceevent()
+*/
+function dCreateserviceevent(){
+	//_getWindows();
+
+	_selectWindow("#");
+	//_selectWindow(_popup("/Service Event/"));
+	//_focusWindow("/Service Event/");
+	_click(_div("Next Status ---- Next Status"));
+	_click(_image("Select a value.[8]"));
+	_click(_div("Pending[1]"));
+	_assertEqual("Assigned", _getText(_span("Assigned")));
+}
+
+/**
+* dSaveandclose($null)
+* @param $null - 
+*/
+function dSaveandclose($null){
+	_click(_span("Save & Close"));
+	_selectWindow();
+	_click(_link("Save Save this Patient Product Enrollment."));
+	_click(_link("Save & Close Save and close this Patient Product Enrollment."));
+	_selectWindow($null);
+	_click(_button("Next"));
+	_assertEqual("Finish", _getText(_button("Finish")));
+	_click(_button("Finish"));
+	_selectWindow();
+	_click(_span("Save"));
+	_click(_span("Save & Close"));
+}

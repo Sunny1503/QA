@@ -1,0 +1,15 @@
+_navigateTo("https://jjstageapp.triplefin.com/JJStageRx365CRM");
+_setValue(_textbox("authUser"), "TRIFIN\\Sukeshana.Dagade");
+_setPassword(_password("authPassword"), "EihZVlQZW14SZy8=");
+_setValue(_textbox("authKey"), "/.*/");
+_click(_submit("Authenticate"));
+_click(_span("navTabButtonArrowDown"));
+_click(_span("Inbound Fax"));
+_selectDomain("infaxstage.triplefin.com");
+_setSelected(_select("ctl00$ContentPlaceHolder1$ddlProgram"), "JJPAF");
+_setValue(_textbox("ctl00$ContentPlaceHolder1$recFrom$tb_datepicker"), "04/10/2019");
+_setValue(_textbox("ctl00$ContentPlaceHolder1$recTo$tb_datepicker"), "7/20/2019");
+_setValue(_textbox("ctl00$ContentPlaceHolder1$phone1"), "123");
+_click(_submit("Search"));
+_click(_submit("Close"));
+

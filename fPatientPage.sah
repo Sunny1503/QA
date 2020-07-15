@@ -1,0 +1,14 @@
+/**
+* fPatientPage()
+*/
+function fPatientPage($PatientName){
+	_windowExists("/Patient:/");
+	_selectWindow("/Patient:/");
+	_click(_cell("Complete"));
+	_doubleClick(_cell($PatientName));
+}
+
+/**
+* fOutboundCorrespondance($OutboundCorrespondanceType)
+* @param $Outboundcorrespondance Type - 
+*/

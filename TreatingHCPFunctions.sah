@@ -1,0 +1,63 @@
+/**
+* dLogin($https___crmirdapp_triplefin_com_irdrx365crm_main_aspx_240849239, $authuser, $authpassword, $authkey, $authenticate)
+* @param $https___crmirdapp_triplefin_com_irdrx365crm_main_aspx_240849239 - 
+* @param  $authuser - 
+* @param  $authpassword - 
+* @param  $authkey - 
+* @param  $authenticate - 
+*/
+function dLogin($https___crmirdapp_triplefin_com_irdrx365crm_main_aspx_240849239, $authuser, $authpassword, $authkey, $authenticate){
+	_navigateTo($https___crmirdapp_triplefin_com_irdrx365crm_main_aspx_240849239);
+	_setValue(_textbox("authUser"), $authuser);
+	_setPassword(_password("authPassword"), $authpassword);
+	_setValue(_textbox("authKey"), $authkey);
+	_click(_submit("Authenticate"));
+	_assertEqual("", _getText(_image("Microsoft Dynamics 365")));
+}
+
+/**
+* dFindPatient($crmgrid_findcriteria)
+* @param $crmgrid_findcriteria - 
+*/
+function dFindPatient($crmgrid_findcriteria){
+	_click(_span("navTabButtonArrowDown"));
+	_click(_span("Patients"));
+	_setValue(_textbox("crmGrid_findCriteria"), $crmgrid_findcriteria);
+	_click(_image("Start search"));
+	_click(_cell("Riz Test[1]"));
+	_assertEqual("Riz Test", _getText(_cell("Riz Test[1]")));
+	_doubleClick(_cell("Riz Test[1]"));
+}
+
+/**
+* dSelectHCP($x1234569870)
+* @param $x1234569870 - 
+*/
+function dSelectHCP($x1234569870){
+	_doubleClick(_cell("Riz Test[2]"));
+	_doubleClick(_image("Select a value.[6]"));
+	_click(_div("tf_provider"));
+	_click(_image("Select a value.[6]"));
+	_click(_span("Look Up More Records"));
+	_click(_image("Clear search[1]"));
+	_click(_image("closedialog.png"));
+	_click(_div("HCP HastingsHastings"));
+	_click(_image("Select a value.[7]"));
+	_click(_span("Hastings[2]"));
+	_click(_div("HCP Office Site TestTest"));
+	_click(_image("Select a value.[8]"));
+	_click(_image("Select a value.[8]"));
+_click(_span("Test[6]"));
+_doubleClick(_image("Select a value.[9]"));
+_click(_image("Select a value.[9]"));
+_click(_span("Test[7]"));
+}
+
+/* --Functions Above-- */
+
+//dLogin("https://crmirdapp.triplefin.com/IRDRX365CRM/main.aspx#240849239", "TRIFIN\\Varadi.Raju", "Fz5ZVlQYW14SZ04=", "/.*/", "Authenticate");
+
+//dFindPatient("Riz Test");
+
+//dSelectHCP("1234569870");
+

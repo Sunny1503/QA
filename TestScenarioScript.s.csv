@@ -1,0 +1,19 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"loadSahi","scenarioFunctions.sah"
+
+
+"TC1","[Documentation]","AMS Scenario on Stage"
+,"f Login CRM","URL:https://jjstageapp.triplefin.com/JJStageRx365CRM/","Username:TRIFIN\\satyasandeep.pulleti","Password:EjwIBxZFSi4RF04=","Authkey:/.*/"
+,"f Search Patient","Patient Name:Riz Test","Patient Initial Name:Riz"
+,"f Patient Page","Patient Name:Riz Test"
+,"f Outbound Correspondance","Outbound Correspondence Type:Fax"
+,"f Service Event","Service Type:Benefit Verification","Status:Assigned"
+,"f Close Browser"
+
+"TC2","[Documentation]","AMS Scenario on Dev"
+,"f Login CRM","URL:https://crmirdapp.triplefin.com/IRDRX365CRM/","Username:TRIFIN\\satyasandeep.pulleti","Password:EjwIBxZFSi4RF04=","Authkey:/.*/"
+,"f Search Patient","Patient Name:Riz Test","Patient Initial Name:Riz"
+,"f Patient Page","Patient Name:Riz Test"
+,"f Outbound Correspondance","Outbound Correspondence Type:Fax"
+,"f Service Event","Service Type:Benefit Verification","Status:Assigned"
+,"f Close Browser"

@@ -1,0 +1,20 @@
+_include("scenarioFunctions.sah");
+
+
+//fLoginCRM("https://jjstageapp.triplefin.com/JJStageRx365CRM/", "TRIFIN\\satyasandeep.pulleti", "EjwIBxZFSi4RF04=", "/.*/");
+//
+//fSearchPatient("Riz Test","Riz");
+//fPatientPage("Riz Test");
+//fOutboundCorrespondance("Fax");
+//fServiceEvent("Benefit Verification", "Assigned");
+//fCloseBrowser();
+
+
+
+fLoginCRM("https://crmirdapp.triplefin.com/IRDRX365CRM/", "TRIFIN\\satyasandeep.pulleti", "EjwIBxZFSi4RF04=", "/.*/");
+
+fSearchPatient("Riz Test","Riz");
+fPatientPage("Riz Test");
+fOutboundCorrespondance("Fax");
+fServiceEvent("Benefit Verification", "Assigned");
+fCloseBrowser();

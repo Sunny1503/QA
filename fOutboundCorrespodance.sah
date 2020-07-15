@@ -1,0 +1,21 @@
+/**
+* fOutboundCorrespondance($OutboundCorrespondanceType)
+* @param $Outboundcorrespondance Type - 
+*/
+function fOutboundCorrespondance($OutboundCorrespondenceType){
+	_windowExists("/Patient Product Enrollment:/");
+	_selectWindow("/Patient Product Enrollment:/");
+	_assertVisible(_span("Patient Product Enrollment : Information"));
+	_click(_image("MORE COMMANDS"));
+	_click(_span("Outbound Correspondence"));
+
+	_windowExists("/Outbound Correspondence/");
+	_selectWindow("/Outbound Correspondence/");
+	_setSelected(_select("outboundTypeOption"), $OutboundCorrespondenceType);
+	while(!_isVisible(_cell("Cover Page Memo:")))
+	{
+		_click(_button("Next"));
+	}
+	_closeWindow();
+
+}

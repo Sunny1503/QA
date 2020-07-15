@@ -1,0 +1,19 @@
+/**
+* fSearchPatient($Patient Name)
+* @param $Patient Name - 
+*/
+function fSearchPatient($PatientName,$PatientInitialName){
+	_windowAction("maximize");
+	_assertVisible(_div("Explore Dynamics 365"));
+	_click(_div("navTourCloseButtonImage"));
+	_click(_span("navTabButtonArrowDown"));
+	_click(_span("Patients"));
+	_assertVisible(_span("Active Patients"));
+	_setValue(_textbox("crmGrid_findCriteria"), $PatientName);
+	_click(_image("Start search"));
+	if(_isVisible(_span($PatientInitialName)))
+	{
+		_rightClick(_span($PatientInitialName));
+		_click(_span("/Open in a New Window/" ));
+	}
+}

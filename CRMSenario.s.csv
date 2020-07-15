@@ -1,0 +1,12 @@
+"TestCase","Key Word","Argument 1","Argument 2"
+,"loadSahi","CRMInboundFax.sah"
+,"loadSahi","CRMInboundFax.sah"
+,"loadSahi","CRMInboundFax.sah"
+,"loadSahi","CRMInboundFax.sah"
+
+"Inbound Fax","[Documentation]","Test Inbound Fax Viewer functionallity"
+,"LoginCRM","https___crmirdapp_triplefin_com_irdrx365crm:https://crmirdapp.triplefin.com/IRDRX365CRM","authuser:TRIFIN\\Sukeshana.Dagade","authpassword:EihZVlQZW14SZy8=","authkey:/.*/"
+,"OpenFaxViewer","infaxdev_triplefin_com:infaxdev.triplefin.com"
+,"SearchFax","ctl00$contentplaceholder1$ddlprogram:Ozurdex-EyeCue","ctl00$contentplaceholder1$phone1:123"
+,"CloseFax"
+,"CloseBrowser"

@@ -1,0 +1,9 @@
+_include("OutboundFunctions.sah");
+/* --Functions Above-- */
+
+dLogin("https://crmirdapp.triplefin.com/IRDRX365CRM/main.aspx#240849239", "TRIFIN\\Varadi.Raju", "Fz5ZVlQYW14SZ04=", "/.*/", "Authenticate");
+
+dFindPatient("Riz Test");
+
+dOutboundCorrespondence("Outbound Correspondence", "Fax", "Finish");
+

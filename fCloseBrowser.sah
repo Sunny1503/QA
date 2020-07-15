@@ -1,0 +1,7 @@
+/**
+* fCloseBrowser()
+*/
+function fCloseBrowser(){
+	_closeBrowser();
+}
+

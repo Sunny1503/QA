@@ -1,0 +1,10 @@
+_include("CRMInboundFax.sah");
+LoginCRM("https://crmirdapp.triplefin.com/IRDRX365CRM", "TRIFIN\\Sukeshana.Dagade", "EihZVlQZW14SZy8=", "/.*/");
+
+OpenFaxViewer("infaxdev.triplefin.com");
+
+SearchFax("Ozurdex-EyeCue","06/10/2019","07/20/2019", "123"); 
+
+CloseFax();
+
+CloseBrowser();

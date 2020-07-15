@@ -1,0 +1,75 @@
+/* login*/
+
+_navigateTo("https://crmirdapp.triplefin.com/IRDRX365CRM/main.aspx#240849239");
+_click(_row("Username"));
+_setValue(_textbox("authUser"), "TRIFIN\\satyasandeep.pulleti");
+_setPassword(_password("authPassword"), "EjwIBxZFSi4RF04=");
+_setValue(_textbox("authKey"), "/.*/");
+_click(_submit("Authenticate"));
+_click(_image("Close[1]"));
+_click(_span("TabCS"));
+
+
+/*Navigating to programs*/
+
+_click(_link("Programs"));
+_click(_span("navTabButtonArrowDown"));
+_click(_span("Patients"));
+
+
+/*search Patient*/
+
+_setValue(_textbox("crmGrid_findCriteria[1]"), "RIZ TEST");
+_click(_image("Start search[1]"));
+_click(_cell("Riz Test"));
+_click(_cell("Riz Test"));
+_doubleClick(_cell("Riz Test"));
+_click(_cell("Complete"));
+_doubleClick(_cell("Riz Test"));
+
+/*Outbound Correspondance*/
+
+_click(_image("MORE COMMANDS"));
+_click(_span("Outbound Correspondence"));
+_selectWindow("Outbound Correspondence");
+_setSelected(_select("outboundTypeOption"), "Fax");
+_click(_button("Next"));
+_click(_button("Next"));
+_click(_button("Next"));
+_click(_button("Next"));
+_click(_button("Next"));
+_click(_button("Next"));
+_closeWindow();
+_selectWindow();
+
+
+/*Benefit Verification (service event)*/
+
+_click(_image("MORE COMMANDS"));
+_click(_link("Start Dialog Start a dialog for this Patient Product Enrollment."));
+_click(_button("Add"));
+_selectWindow("/Create Service Event/");
+_setSelected(_select("ms-crm-SelectBox "), "Benefit Verification");
+_click(_button("Next"));
+_click(_button("Next"));
+_click(_cell("A Service Event has been created for you. Click Here to open the Service Event."));
+_click(_link("Click Here to open the Service Event."));
+_selectWindow("#");
+_click(_div("Next Status ---- Next Status"));
+_click(_image("Select a value.[8]"));
+_click(_div("Pending[1]"));
+
+
+/*Save and close*/
+
+_click(_span("Save & Close"));
+_selectWindow();
+_click(_link("Save Save this Patient Product Enrollment."));
+_click(_link("Save & Close Save and close this Patient Product Enrollment."));
+_selectWindow("null");
+_click(_button("Next"));
+_click(_button("Finish"));
+_selectWindow();
+_click(_span("Save"));
+_click(_span("Save & Close"));
+

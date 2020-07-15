@@ -1,0 +1,146 @@
+/**
+* fLoginCRM($URL, $Username, $Password, $Authkey)
+* @param $URL - 
+* @param  $Username - 
+* @param  $Password - 
+* @param  $Authkey - 
+*/
+function fLoginCRM($URL, $Username, $Password, $Authkey){
+	//_openBrowser();
+	_navigateTo($URL);
+	//_openWindow($URL);
+
+	if(_isVisible(_textbox("authUser")))
+	{
+		_setValue(_textbox("authUser"), $Username);
+		_setPassword(_password("authPassword"), $Password);
+		_setValue(_textbox("authKey"), $Authkey);
+		_click(_submit("Authenticate"));
+	}
+
+}
+
+/**
+* fSearchPatient($Patient Name)
+* @param $Patient Name - 
+*/
+function fSearchPatient($PatientName,$PatientInitialName){
+	_windowAction("maximize");
+	_assertVisible(_div("Explore Dynamics 365"));
+	_click(_div("navTourCloseButtonImage"));
+	_click(_span("navTabButtonArrowDown"));
+	_click(_span("Patients"));
+	_assertVisible(_span("Active Patients"));
+	_setValue(_textbox("crmGrid_findCriteria"), $PatientName);
+	_click(_image("Start search"));
+	if(_isVisible(_span($PatientInitialName)))
+	{
+		_rightClick(_span($PatientInitialName));
+		_click(_span("/Open in a New Window/" ));
+	}
+}
+
+/**
+* fPatientPage()
+*/
+function fPatientPage($PatientName){
+	_windowExists("/Patient:/");
+	_selectWindow("/Patient:/");
+	_click(_cell("Complete"));
+	_doubleClick(_cell($PatientName));
+}
+
+/**
+* fOutboundCorrespondance($OutboundCorrespondanceType)
+* @param $Outboundcorrespondance Type - 
+*/
+function fOutboundCorrespondance($OutboundCorrespondenceType){
+	_windowExists("/Patient Product Enrollment:/");
+	_selectWindow("/Patient Product Enrollment:/");
+	_assertVisible(_span("Patient Product Enrollment : Information"));
+	_click(_image("MORE COMMANDS"));
+	_click(_span("Outbound Correspondence"));
+
+	_windowExists("/Outbound Correspondence/");
+	_selectWindow("/Outbound Correspondence/");
+	_setSelected(_select("outboundTypeOption"), $OutboundCorrespondenceType);
+	while(!_isVisible(_cell("Cover Page Memo:")))
+	{
+		_click(_button("Next"));
+	}
+	_closeWindow();
+
+}
+
+/**
+* fServiceEvent($ServiceType, $Status)
+* @param $ServiceType - 
+* @param  $Status - 
+*/
+function fServiceEvent($ServiceType, $Status){
+	_windowExists("/Patient Product Enrollment:/");
+	_selectWindow("/Patient Product Enrollment:/");
+	_assertVisible(_span("Patient Product Enrollment : Information"));
+	_click(_image("MORE COMMANDS"));
+	_click(_span("Start Dialog"));
+	//	if(_isVisible(_div("Look Up Record")))
+	//		{ 
+	//			_click(_div("Look Up Record"));
+	_click(_button("Add"));
+	//}
+
+	_windowExists("/Create Service Event/");
+	_selectWindow("/Create Service Event/");
+	_setSelected(_select("ms-crm-SelectBox "), $ServiceType);
+	_click(_button("Next"));
+	_click(_button("Next"));
+	_assertVisible(_label("/A Service Event has been created for you./"))
+		_click(_link("Click Here to open the Service Event."));
+
+	_windowExists("/Service Event:/");
+	_selectWindow("/Service Event:/");
+	_assertEqual("Service Event Status PendingPending", _getText(_div("Service Event Status PendingPending")));
+	//_click(_div("Next Status ----"));
+	_setValue(_textbox("new_newsubstatus_ledit"), $Status);
+	_click(_span("Save"));
+	//_assertEqual("Service Event Sub Status AssignedAssigned", _getText(_div("Service Event Sub Status AssignedAssigned")));
+	_click(_span("Save & Close"));
+
+	_windowExists("/Create Service Event/");
+	_selectWindow("/Create Service Event/");
+	_click(_button("Next"));
+	_click(_button("Finish"));
+
+	//Focus window /Patient Product Enrollment/
+	_windowExists("/Patient Product Enrollment:/");
+	_selectWindow("/Patient Product Enrollment:/");
+	_click(_span("Save & Close"));
+
+	//Focus Window /Patient Page/
+	_windowExists("/Patient:/");
+	_selectWindow("/Patient:/");
+	_click(_span("Save & Close"));
+	_closeWindow();
+
+}
+
+/**
+* fCloseBrowser()
+*/
+function fCloseBrowser(){
+	_closeBrowser();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
